@@ -39,16 +39,17 @@
         <div class="container-fluid">
 
           <div class="list-group">
-            <%for(var i=0;i<taches.length;i++){
+            <%
+            for (let i = 0; i < taches.length; i++) {
               var colorItem;
               var information = "Echéance:" + dateFormat(taches[i].dateDue);
-              if(taches[i].dateCloture){
-                colorItem = 'list-group-item-success'
-                information = "Cloturé le "+dateFormat(taches[i].dateCloture)
+              if(taches[i].dateCloture) {
+                colorItem = 'list-group-item-success';
+                information = "Cloturé le "+ dateFormat(taches[i].dateCloture);
               }
-              if(!taches[i].dateCloture && new Date()>taches[i].dateDue){
+              if(!taches[i].dateCloture && new Date() > taches[i].dateDue) {
                 colorItem = 'list-group-item-danger'
-                information = "Echéance dépassée: "+dateFormat(taches[i].dateDue)
+                information = "Echéance dépassée: "+ dateFormat(taches[i].dateDue)
               }  
             %>
               <a href="#" class="list-group-item list-group-item-action <%=colorItem%>">
@@ -59,7 +60,9 @@
                 <p class="mb-1"><%=taches[i].name%></p>
                 <small><%=information%></small>
             </a>
-            <%}%>
+            <%
+            }
+            %>
           </div>
 
 

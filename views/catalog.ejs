@@ -66,12 +66,13 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                  <% for(var i=0;i<articles.length;i++){
+                  <% 
+                  for (var i = 0; i < articles.length; i++) {
                       var dangerClass = '';
-                      if(articles[i].stock<=2){
+                      if ( articles[i].stock <= 2 ) {
                         dangerClass = 'table-danger';
                       }
-                    %>
+                  %>
                     <tr class="<%=dangerClass%>">
                       <td><%=articles[i].title%></td>
                       <td><%=articles[i].description%></td>
@@ -81,7 +82,9 @@
                       <td><img src="/images/<%=articles[i].img%>"></td>
                     </tr>
                     
-                  <%}%>
+                  <%
+                  }
+                  %>
 
                   
 

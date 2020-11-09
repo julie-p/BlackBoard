@@ -1,22 +1,23 @@
 var ctx = document.getElementById('chartBar');
 
-var numFemale = ctx.dataset.female
-var numMale = ctx.dataset.male
+var numFemale = ctx.dataset.female;
+var numMale = ctx.dataset.male;
+console.log(numFemale)
+console.log(numMale)
 
-var data = [numMale,numFemale]
+/* var data = [ numMale, numFemale ] */
 
-var labels = ['male', 'female']
+var labels = [ 'Homme', 'Femme' ]
 
 var firstChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: labels,
         datasets: [{
-            label: 'Utilisateurs par sexe',
-            data: data,
+            data: [numMale, numFemale],
             backgroundColor: [
-                '#ff6b81',
-                '#70a1ff',
+                '#fab1a0',
+                '#ffeaa7',
             ],
             borderWidth: 1
         }]
@@ -38,12 +39,12 @@ var firstChart = new Chart(ctx, {
 
 var ctx = document.getElementById('doughnut');
 
-var messLu = ctx.dataset.lu
-var messNonLu = ctx.dataset.nonlu
+var messLu = ctx.dataset.lu;
+var messNonLu = ctx.dataset.nonlu;
 
-var data = [messLu,messNonLu]
+var data = [ messLu, messNonLu ]
 
-var labels = ['lu', 'non lu']
+var labels = [ 'Lu', 'Non lu' ]
 
 var firstChart = new Chart(ctx, {
     type: 'doughnut',
@@ -53,20 +54,20 @@ var firstChart = new Chart(ctx, {
             label: 'Messages',
             data: data,
             backgroundColor: [
-                '#2ecc71',
-                '#e67e22',
+                '#833471',
+                '#FDA7DF',
             ],
             borderWidth: 1
         }]
     },
     options: {
-        scales: {
+        /* scales: {
             yAxes: [{
                 ticks: {
                     beginAtZero: true
                 }
             }]
-        }
+        } */
     }
 });
 
@@ -87,37 +88,37 @@ var firstChart = new Chart(ctx, {
             label: 'Messages',
             data: data,
             backgroundColor: [
-                '#16a085',
-                '#f1c40f',
+                '#55efc4',
+                '#00cec9',
             ],
             borderWidth: 1
         }]
     },
     options: {
-        scales: {
+        /* scales: {
             yAxes: [{
                 ticks: {
                     beginAtZero: true
                 }
             }]
-        }
+        } */
     }
 });
 
 var ctx = document.getElementById('linechart');
 
-var data = JSON.parse(ctx.dataset.chartviz)
+var data = JSON.parse(ctx.dataset.ca); //Transforme en obj
 
-var userCountByMonthLabels = []
-var userCountByMonthDataResults = []
+var userCountByMonthLabels = [];
+var userCountByMonthDataResults = [];
 
-for(var i=0;i<data.length;i++){
-    var date = new Date((data[i]._id.year), (data[i]._id.month - 1), 1)
-    var month = date.toLocaleString('default', {month: 'long'})
+for (var i = 0; i < data.length; i++) {
+    var date = new Date((data[i]._id.year), (data[i]._id.month -1), 1 );//Récupère date
+    var month = date.toLocaleString('fr-FR', {month: 'long'});//Formate mois
 
-    userCountByMonthLabels.push(month)
+    userCountByMonthLabels.push(month);//Push le mois
 
-    userCountByMonthDataResults.push(data[i].CA)
+    userCountByMonthDataResults.push(data[i].CA);//Push le chiffre d'affaires
 }
 
 var firstChart = new Chart(ctx, {
@@ -126,8 +127,8 @@ var firstChart = new Chart(ctx, {
         labels: userCountByMonthLabels,
         datasets: [{
             data: userCountByMonthDataResults,
-            backgroundColor: '#f8c291',
-            borderColor: '#e55039'
+            backgroundColor: '#ff7675',
+            borderColor: '#d63031'
         }]
     },
     options: {

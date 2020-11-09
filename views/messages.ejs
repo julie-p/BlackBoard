@@ -47,20 +47,23 @@
               </tr>
             </thead>
             <tbody>
-              <%for(var i=0;i<messages.length;i++){
-                if(messages[i].read){
-                  var read = "fa-envelope-open"
+              <%
+              for (let i = 0; i < messages.length; i++) {
+                if (messages[i].read) {
+                  let read = "fa-envelope-open"
                 }  else {
-                  var read = "fa-envelope"
+                  let read = "fa-envelope"
                 }
               %>
                 <tr>
-                  <td><i class="fas <%=read%>"></i></td>
-                  <td><%=messages[i].title%></td>
-                  <td><%=messages[i].sender%></td>
-                  <td><%=messages[i].dateExp%></td>
+                  <td><i class="fas <%= read %>"></i></td>
+                  <td><%= messages[i].title %></td>
+                  <td><%= messages[i].sender %></td>
+                  <td><%= messages[i].dateExp %></td>
                 </tr>
-              <%}%>
+              <%
+              }
+              %>
             </tbody>
           </table>
 

@@ -68,11 +68,12 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <%for(var i=0;i<users.length;i++){
-                      if(users[i].gender == 'male'){
-                        var sexe = "fa-male"
+                    <%
+                    for (let i = 0; i < users.length; i++) {
+                      if (users[i].gender == 'male') {
+                        var gender = "fa-male"
                       } else {
-                        var sexe = "fa-female"
+                        var gender = "fa-female"
                       }
                     %>
                       <tr>
@@ -81,10 +82,12 @@
                         <td><%=users[i].email%></td>
                         <td>*******</td>
                         <td><%=users[i].age%></td>
-                        <td><i class="fas <%=sexe%>"></i></td>
+                        <td><i class="fas <%= gender %>"></i></td>
                         <td><%=dateFormat(users[i].dateInsert)%></td>
                       </tr>
-                    <%}%>
+                    <%
+                    }
+                    %>
                   </tbody>
                 </table>
               </div>

@@ -15,7 +15,6 @@ var taskSchema = mongoose.Schema({
     dateInsert: Date,
     dateDue: Date,
     dateCloture: Date,
-
 })
 
 var usersSchema = mongoose.Schema({

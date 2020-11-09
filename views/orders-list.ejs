@@ -76,25 +76,26 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <%for(var i=0;i<orders.length;i++){
-                      var statusPaiement = "";
-                      var datePaiement = "";
-                      var statusShipment = "status-secondary";
-                      var dateShipment = "";
+                    <%
+                    for (let i = 0; i < orders.length; i++) {
+                      let statusPaiement = "";
+                      let datePaiement = "";
+                      let statusShipment = "status-secondary";
+                      let dateShipment = "";
 
-                      if(orders[i].status_payment == 'waiting'){
+                      if (orders[i].status_payment == 'waiting') {
                         statusPaiement = "status-secondary";
-                      } else if(orders[i].status_payment == 'refused'){
+                      } else if (orders[i].status_payment == 'refused') {
                         statusPaiement = "status-danger";
-                      } else if(orders[i].status_payment == 'validated'){
+                      } else if (orders[i].status_payment == 'validated') {
                         statusPaiement = "status-success";
                         datePaiement = dateFormat(orders[i].date_payment)
-                      }
+                      };
 
-                      if(orders[i].status_shipment == true){
+                      if (orders[i].status_shipment == true) {
                         statusShipment = "status-success"
                         dateShipment = dateFormat(orders[i].date_shipment)
-                      }
+                      };
                       
                     %>
                       <tr>

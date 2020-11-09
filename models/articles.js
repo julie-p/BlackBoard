@@ -1,4 +1,4 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
 var articlesSchema = mongoose.Schema({
     title: String,
@@ -9,4 +9,4 @@ var articlesSchema = mongoose.Schema({
     img: String
 })
 
-module.exports = mongoose.model('articles', articlesSchema)
+module.exports = mongoose.model('articles', articlesSchema);
