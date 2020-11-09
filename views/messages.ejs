@@ -48,11 +48,12 @@
             </thead>
             <tbody>
               <%
+              let read;
               for (let i = 0; i < messages.length; i++) {
                 if (messages[i].read) {
-                  let read = "fa-envelope-open"
+                  read = "fa-envelope-open"
                 }  else {
-                  let read = "fa-envelope"
+                  read = "fa-envelope"
                 }
               %>
                 <tr>
